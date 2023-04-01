@@ -1,4 +1,4 @@
-package com.musalasoft.drones.exception;
+package com.musalasoft.drones.advice;
 
 
 
