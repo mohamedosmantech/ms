@@ -1,4 +1,4 @@
-package com.musalasoft.drones.mapper;
+package com.musalasoft.drones.model.mapper;
 
 
 import com.musalasoft.drones.model.dto.DroneDTO;
@@ -7,9 +7,7 @@ import com.musalasoft.drones.model.entities.Drone;
 import com.musalasoft.drones.model.entities.Medication;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.springframework.stereotype.Component;
 
-@Component
 @Mapper(componentModel = "spring")
 public interface DroneMapper {
     @Mapping(target = "state", ignore = true)

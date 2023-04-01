@@ -2,7 +2,7 @@ package com.musalasoft.drones.service;
 
 
 import com.musalasoft.drones.constants.DroneConstant;
-import com.musalasoft.drones.mapper.DroneMapper;
+import com.musalasoft.drones.model.mapper.DroneMapper;
 import com.musalasoft.drones.model.dto.DroneDTO;
 import com.musalasoft.drones.model.dto.MedicationDTO;
 import com.musalasoft.drones.model.entities.Drone;
