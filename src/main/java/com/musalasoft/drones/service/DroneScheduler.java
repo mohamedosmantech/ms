@@ -22,6 +22,8 @@ public class DroneScheduler {
 
     @Scheduled(cron = "${drone.battery-check-period}")
     void batteryLevelChecks() {
+
+        //todo change drone state if it's low battery
         log.info("{}: start time: {} ", BATTERY_LEVEL_CHECK, Instant.now());
         droneRepository.findAll().forEach(drone ->
                 log.info("<><><> Drone: {}, Battery level: {}", drone.getSerialNumber(), drone.getBatteryCapacity())

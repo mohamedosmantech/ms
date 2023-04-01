@@ -61,6 +61,12 @@ While implementing your solution **please take care of the following requirement
 
 # Running the App
 
+mvn clean install
+mvn compile
+mvn test
+mvn spring-boot:run
+
+
 ## Compile the project
 
 mvn clean package

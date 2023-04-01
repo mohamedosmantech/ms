@@ -20,7 +20,7 @@ import java.util.List;
 @Slf4j
 @Validated
 @RestController
-@RequestMapping("/drone/api/v1/")
+@RequestMapping("/api/v1/")
 public class DroneController {
     private final DroneService droneService;
 
@@ -30,7 +30,7 @@ public class DroneController {
     }
 
     @Operation(summary = "Register a new drone")
-    @PostMapping("")
+    @PostMapping("register")
     public ResponseEntity<Drone> registerDrone(@Valid @RequestBody DroneDTO droneDTO) {
         log.info("Registering drone {}", droneDTO.getSerialNumber());
         Drone drone = droneService.registerDrone(droneDTO);
@@ -39,7 +39,7 @@ public class DroneController {
     }
 
     @Operation(summary = "Load a list of medications into a drone")
-    @PostMapping("{droneId}/medications")
+    @PostMapping("loadMedications/{droneId}")
     public ResponseEntity<Drone> loadDroneWithMedications(@PathVariable(name = "droneId") long droneId,
                                                           @Valid @RequestBody List<MedicationDTO> medications) {
         log.info("Loading drone {} with {} medications", droneId, medications.size());
@@ -49,7 +49,7 @@ public class DroneController {
     }
 
     @Operation(summary = "Fetch all the (current) medications loaded into a drone")
-    @GetMapping("{droneId}/medications")
+    @GetMapping("medications/{droneId}")
     public ResponseEntity<List<Medication>> getDroneMedications(@PathVariable(name = "droneId") long droneId) {
         log.info("Fetching loaded medications for drone {}", droneId);
         List<Medication> medications = droneService.getDroneMedications(droneId);
@@ -67,7 +67,7 @@ public class DroneController {
     }
 
     @Operation(summary = "Get the battery level of a specific drone")
-    @GetMapping("{droneId}/battery-level")
+    @GetMapping("battery-level/{droneId}")
     public ResponseEntity<BigDecimal> getDroneBatteryLevel(@PathVariable(name = "droneId") long droneId) {
         log.info("Checking battery level for drone {}", droneId);
         BigDecimal batteryLevel = droneService.getDroneBatteryLevel(droneId);

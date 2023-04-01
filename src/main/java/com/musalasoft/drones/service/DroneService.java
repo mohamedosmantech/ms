@@ -80,6 +80,7 @@ public class DroneService {
             medication.setLoadingSession(drone.getActiveLoadingSession());
             return medication;
         }).collect(Collectors.toList());
+        System.out.println(newMedications);
 
         medicationRepository.saveAll(newMedications);
 

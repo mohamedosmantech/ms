@@ -1,0 +1,522 @@
+{
+	"info": {
+		"_postman_id": "a3ff8a2f-7fe7-4d80-9c33-7ed7b50f47cb",
+		"name": "drones-dispatch-contrlloer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register drone",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serialNumber\":\"1073650531\",\r\n    \"model\":\"CRUISERWEIGHT\",\r\n    \"weight\":\"499.9999\",\r\n    \"batteryCapacity\":\"99.9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/drones/api/v1/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"drones",
+						"api",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serialNumber\":\"10736505301\",\r\n    \"model\":\"CRUISERWEIGHT\",\r\n    \"weight\":\"499.9999\",\r\n    \"batteryCapacity\":\"99.9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/drones/api/v1/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"drones",
+								"api",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 01 Apr 2023 11:01:56 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"serialNumber\": \"10736505301\",\n    \"model\": \"CRUISERWEIGHT\",\n    \"weight\": 499.9999,\n    \"batteryCapacity\": 99.9,\n    \"state\": \"IDLE\",\n    \"createdDate\": \"2023-04-01T11:01:56.660683700Z\",\n    \"lastModifiedDate\": \"2023-04-01T11:01:56.660683700Z\",\n    \"activeLoadingSession\": null\n}"
+				},
+				{
+					"name": "failed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serialNumber\":\"10736505301\",\r\n    \"model\":\"CRUISERWEIGHT\",\r\n    \"weight\":\"499.9999\",\r\n    \"batteryCapacity\":\"99.9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/drones/api/v1/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"drones",
+								"api",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 01 Apr 2023 11:02:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": [\n        {\n            \"message\": \"Your request parameter did not match our schema,  Drone with serial number 10736505301 already exists\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "loadMedications",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n{\r\n    \"name\":\"Name_12\",\r\n    \"code\":\"CODE_1\",\r\n    \"weight\":\"49.99\",\r\n    \"image\":\"ax.jpj\"\r\n},\r\n{\r\n    \"name\":\"NaMe-12\",\r\n    \"code\":\"CODE_3\",\r\n    \"weight\":\"49.99\",\r\n    \"image\":\"axc.JPJ\"\r\n}\r\n]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/drones/api/v1/loadMedications/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"drones",
+						"api",
+						"v1",
+						"loadMedications",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "loadMedications",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n{\r\n    \"name\":\"Name_12\",\r\n    \"code\":\"CODE_1\",\r\n    \"weight\":\"49.99\",\r\n    \"image\":\"ax.jpj\"\r\n},\r\n{\r\n    \"name\":\"NaMe-12\",\r\n    \"code\":\"CODE_3\",\r\n    \"weight\":\"49.99\",\r\n    \"image\":\"axc.JPJ\"\r\n}\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/drones/api/v1/loadMedications/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"drones",
+								"api",
+								"v1",
+								"loadMedications",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 01 Apr 2023 13:43:33 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"droneId\": 2,\n    \"serialNumber\": \"107365053011\",\n    \"model\": \"CRUISERWEIGHT\",\n    \"weight\": 500,\n    \"batteryCapacity\": 99.9,\n    \"state\": \"LOADING\",\n    \"medications\": [],\n    \"createdDate\": \"2023-04-01T13:42:09.734284Z\",\n    \"lastModifiedDate\": \"2023-04-01T13:42:13.105022Z\",\n    \"activeLoadingSession\": \"7186a5c1-1056-4b30-bbb5-e27c66a9827e\"\n}"
+				}
+			]
+		},
+		{
+			"name": "medications",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/drones/api/v1/medications/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"drones",
+						"api",
+						"v1",
+						"medications",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "medications",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/drones/api/v1/medications/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"drones",
+								"api",
+								"v1",
+								"medications",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 01 Apr 2023 13:44:19 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"medicationId\": 52,\n        \"drone\": {\n            \"droneId\": 2,\n            \"serialNumber\": \"107365053011\",\n            \"model\": \"CRUISERWEIGHT\",\n            \"weight\": 500,\n            \"batteryCapacity\": 99.9,\n            \"state\": \"LOADING\",\n            \"medications\": [],\n            \"createdDate\": \"2023-04-01T13:42:09.734284Z\",\n            \"lastModifiedDate\": \"2023-04-01T13:42:13.105022Z\",\n            \"activeLoadingSession\": \"7186a5c1-1056-4b30-bbb5-e27c66a9827e\"\n        },\n        \"name\": \"Name_12\",\n        \"weight\": 49.99,\n        \"code\": \"CODE_1\",\n        \"image\": \"ax.jpj\",\n        \"loadingSession\": \"7186a5c1-1056-4b30-bbb5-e27c66a9827e\",\n        \"createdDate\": \"2023-04-01T13:43:33.909197Z\",\n        \"lastModifiedDate\": \"2023-04-01T13:43:33.909197Z\"\n    },\n    {\n        \"medicationId\": 53,\n        \"drone\": {\n            \"droneId\": 2,\n            \"serialNumber\": \"107365053011\",\n            \"model\": \"CRUISERWEIGHT\",\n            \"weight\": 500,\n            \"batteryCapacity\": 99.9,\n            \"state\": \"LOADING\",\n            \"medications\": [],\n            \"createdDate\": \"2023-04-01T13:42:09.734284Z\",\n            \"lastModifiedDate\": \"2023-04-01T13:42:13.105022Z\",\n            \"activeLoadingSession\": \"7186a5c1-1056-4b30-bbb5-e27c66a9827e\"\n        },\n        \"name\": \"NaMe-12\",\n        \"weight\": 49.99,\n        \"code\": \"CODE_3\",\n        \"image\": \"axc.JPJ\",\n        \"loadingSession\": \"7186a5c1-1056-4b30-bbb5-e27c66a9827e\",\n        \"createdDate\": \"2023-04-01T13:43:33.914183Z\",\n        \"lastModifiedDate\": \"2023-04-01T13:43:33.914183Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "available-drones",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/drones/api/v1/available",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"drones",
+						"api",
+						"v1",
+						"available"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "available-drones",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/drones/api/v1/available",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"drones",
+								"api",
+								"v1",
+								"available"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 01 Apr 2023 13:46:02 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"droneId\": 1,\n        \"serialNumber\": \"10736505301\",\n        \"model\": \"CRUISERWEIGHT\",\n        \"weight\": 500,\n        \"batteryCapacity\": 99.9,\n        \"state\": \"IDLE\",\n        \"medications\": [],\n        \"createdDate\": \"2023-04-01T13:42:05.308634Z\",\n        \"lastModifiedDate\": \"2023-04-01T13:42:05.308634Z\",\n        \"activeLoadingSession\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "battery-level",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/drones/api/v1/battery-level/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"drones",
+						"api",
+						"v1",
+						"battery-level",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "battery-level",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/drones/api/v1/battery-level/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"drones",
+								"api",
+								"v1",
+								"battery-level",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 01 Apr 2023 13:47:44 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "99.9"
+				}
+			]
+		}
+	]
+}

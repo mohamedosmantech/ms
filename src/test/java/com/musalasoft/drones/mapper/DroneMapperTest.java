@@ -5,6 +5,7 @@ import com.musalasoft.drones.model.dto.MedicationDTO;
 import com.musalasoft.drones.model.entities.Drone;
 import com.musalasoft.drones.model.entities.Medication;
 import com.musalasoft.drones.model.enums.Model;
+import com.musalasoft.drones.model.mapper.DroneMapperImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,7 +20,7 @@ public class DroneMapperTest {
     private DroneMapperImpl droneMapper;
 
     @Test
-    void droneCreateInputTODrone() {
+    void droneDTOToDroneEntity() {
         DroneDTO input = DroneDTO.builder()
                 .serialNumber("SER_NO1")
                 .model(Model.MIDDLEWEIGHT)
@@ -35,7 +36,7 @@ public class DroneMapperTest {
     }
 
     @Test
-    void medicationCreateInputToMedication() {
+    void medicationDTOtoMedicationEntity() {
         MedicationDTO input = MedicationDTO.builder()
                 .code("AEWR")
                 .weight(new BigDecimal(45))

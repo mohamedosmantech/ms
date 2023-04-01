@@ -1,6 +1,7 @@
 package com.musalasoft.drones.model.dto;
 
 import com.musalasoft.drones.model.enums.Model;
+import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.DecimalMax;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -21,6 +22,7 @@ public class DroneDTO {
     private String serialNumber;
 
     @NotNull
+    @Enumerated
     private Model model;
 
     @DecimalMax(value = "500")

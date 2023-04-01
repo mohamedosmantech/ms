@@ -22,11 +22,11 @@ import java.time.Instant;
 public class Medication {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private long medicationId;
 
     @NotNull
-    @ManyToOne
-    @JoinColumn(name = "id", insertable = false, updatable = false)
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "droneId")
     private Drone drone;
 
     @NotBlank
